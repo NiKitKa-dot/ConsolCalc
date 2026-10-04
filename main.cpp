@@ -1,6 +1,7 @@
 #include <QCoreApplication>
 #include <QTextStream>
 #include <QStringList>
+#include "csvparser.h"
 #include "calculator.h"
 // Функция для вывода справки по командам
 void printHelp(QTextStream& out) {
@@ -8,12 +9,15 @@ void printHelp(QTextStream& out) {
     out << " add <a> <b> - сложение\n";
     out << " sub <a> <b> - вычитание\n";
     out << " mul <a> <b> - умножение\n";
-    out << " nok <a> <b> - НОК\n";
     out << " div <a> <b> - деление\n";
+    out << " lcm <a> <b> - НОК двух натуральных чисел\n";
+    out << " csv <path>  - вычислить суммы и средние построчно\n";   // ← НОВОЕ
     out << " reset - сброс\n";
     out << " help - эта справка\n";
     out << " quit - выход\n";
 }
+
+
 int main(int argc, char* argv[]) {
     // QCoreApplication вместо QApplication - для консольного приложения
     QCoreApplication app(argc, argv);
@@ -22,6 +26,33 @@ int main(int argc, char* argv[]) {
     QTextStream out(stdout);
     // Создаём калькулятор (родитель не нужен - живёт до конца программы)
     Calculator calc;
+    // --- CSV-парсер ---
+    CsvParser csv;
+
+    // Каждая строка файла — вывод суммы и среднего
+    QObject::connect(&csv, &CsvParser::lineProcessed,
+                     [&out](int n, double sum, double avg) {
+                         out << QString("Строка %1: сумма = %2, среднее = %3\n")
+                                    .arg(n).arg(sum).arg(avg);
+                         out.flush();
+                     });
+
+    // Завершение обработки файла — итоги
+    QObject::connect(&csv, &CsvParser::finished,
+                     [&out](int lines, double sum, double avg) {
+                         out << QString("\nИтого: строк = %1, сумма = %2, среднее = %3\n")
+                                    .arg(lines).arg(sum).arg(avg);
+                         out.flush();
+                     });
+
+    // Ошибки парсера
+    QObject::connect(&csv, &CsvParser::errorOccurred,
+                     [&out](const QString &m) {
+                         out << "Ошибка CSV: " << m << "\n";
+                         out.flush();
+                     });
+
+
     // СОЕДИНЕНИЯ: связываем сигналы калькулятора с лямбда-обработчиками
     // 1. При успешном вычислении - выводим результат
     QObject::connect(&calc, &Calculator::resultReady,
@@ -68,6 +99,18 @@ int main(int argc, char* argv[]) {
         // Сброс
         if (command == "reset") {
             calc.reset();
+            out << "> ";
+            out.flush();
+            continue;
+        }
+        // --- команда csv <path> ---
+        if (command == "csv") {
+            if (parts.size() != 2) {
+                out << "Использование: csv <путь_к_файлу>\n> ";
+                out.flush();
+                continue;
+            }
+            csv.parseFile(parts[1]);
             out << "> ";
             out.flush();
             continue;

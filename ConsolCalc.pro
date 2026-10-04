@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         calculator.cpp \
+        csvparser.cpp \
         main.cpp
 
 TRANSLATIONS += \
@@ -21,4 +22,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    calculator.h
+    calculator.h \
+    csvparser.h
+
+DISTFILES += \
+    data.csv
