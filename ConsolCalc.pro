@@ -9,7 +9,8 @@ CONFIG += c++17 cmdline
 SOURCES += \
         calculator.cpp \
         csvparser.cpp \
-        main.cpp
+        main.cpp \
+        tests/test_calculator.cpp
 
 TRANSLATIONS += \
     ConsolCalc_ru_RU.ts
@@ -26,4 +27,6 @@ HEADERS += \
     csvparser.h
 
 DISTFILES += \
-    data.csv
+    CMakeLists.txt \
+    data.csv \
+    tests/CMakeLists.txt

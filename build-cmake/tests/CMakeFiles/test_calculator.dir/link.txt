@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/test_calculator.dir/link.d CMakeFiles/test_calculator.dir/test_calculator_autogen/mocs_compilation.cpp.o CMakeFiles/test_calculator.dir/test_calculator.cpp.o CMakeFiles/test_calculator.dir/__/calculator.cpp.o -o test_calculator  /usr/lib/x86_64-linux-gnu/libQt6Test.so.6.10.2 /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.10.2

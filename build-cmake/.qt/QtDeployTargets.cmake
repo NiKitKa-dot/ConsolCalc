@@ -1,0 +1,4 @@
+set(__QT_DEPLOY_TARGET_test_calculator_FILE /home/vboxuser/ConsolCalc/build-cmake/tests/test_calculator)
+set(__QT_DEPLOY_TARGET_test_calculator_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_ConsolCalc_FILE /home/vboxuser/ConsolCalc/build-cmake/ConsolCalc)
+set(__QT_DEPLOY_TARGET_ConsolCalc_TYPE EXECUTABLE)

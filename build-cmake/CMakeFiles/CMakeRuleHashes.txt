@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+f1fb433d1e7c94eeb4aa30dad7af434c CMakeFiles/ConsolCalc_autogen
+f1808500b3f6a8684bf53a6a8a9f7636 ConsolCalc_autogen/timestamp
+eafc632617bde960e7e947b592ccb552 tests/CMakeFiles/test_calculator_autogen
+c2948ebb47efb25c1c98e911332712cb tests/test_calculator_autogen/timestamp

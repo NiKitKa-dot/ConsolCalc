@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/vboxuser/ConsolCalc/build-cmake/cmake_install.cmake",
+		"/home/vboxuser/ConsolCalc/build-cmake/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

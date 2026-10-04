@@ -1,0 +1,16 @@
+/home/vboxuser/ConsolCalc/build-cmake/CMakeFiles/ConsolCalc.dir
+/home/vboxuser/ConsolCalc/build-cmake/CMakeFiles/package.dir
+/home/vboxuser/ConsolCalc/build-cmake/CMakeFiles/package_source.dir
+/home/vboxuser/ConsolCalc/build-cmake/CMakeFiles/test.dir
+/home/vboxuser/ConsolCalc/build-cmake/CMakeFiles/edit_cache.dir
+/home/vboxuser/ConsolCalc/build-cmake/CMakeFiles/rebuild_cache.dir
+/home/vboxuser/ConsolCalc/build-cmake/CMakeFiles/ConsolCalc_autogen_timestamp_deps.dir
+/home/vboxuser/ConsolCalc/build-cmake/CMakeFiles/ConsolCalc_autogen.dir
+/home/vboxuser/ConsolCalc/build-cmake/tests/CMakeFiles/test_calculator.dir
+/home/vboxuser/ConsolCalc/build-cmake/tests/CMakeFiles/package.dir
+/home/vboxuser/ConsolCalc/build-cmake/tests/CMakeFiles/package_source.dir
+/home/vboxuser/ConsolCalc/build-cmake/tests/CMakeFiles/test.dir
+/home/vboxuser/ConsolCalc/build-cmake/tests/CMakeFiles/edit_cache.dir
+/home/vboxuser/ConsolCalc/build-cmake/tests/CMakeFiles/rebuild_cache.dir
+/home/vboxuser/ConsolCalc/build-cmake/tests/CMakeFiles/test_calculator_autogen_timestamp_deps.dir
+/home/vboxuser/ConsolCalc/build-cmake/tests/CMakeFiles/test_calculator_autogen.dir

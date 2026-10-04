@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/ConsolCalc.dir/link.d CMakeFiles/ConsolCalc.dir/ConsolCalc_autogen/mocs_compilation.cpp.o CMakeFiles/ConsolCalc.dir/main.cpp.o CMakeFiles/ConsolCalc.dir/calculator.cpp.o CMakeFiles/ConsolCalc.dir/csvparser.cpp.o -o ConsolCalc  /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.10.2
