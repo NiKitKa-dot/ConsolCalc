@@ -73,18 +73,18 @@ ConsolCalc/
 ### Установка зависимостей
 
 **Ubuntu / Debian:**
-```bash
+
 sudo apt install qt6-base-dev qt6-base-dev-tools cmake g++ dpkg-dev
 Сборка и запуск
 Вариант 1: CMake (рекомендуется)
 
-bash
+
 cmake -S . -B build-cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build build-cmake -j$(nproc)
 ./build-cmake/ConsolCalc
 Вариант 2: qmake
 
-bash
+
 mkdir build && cd build
 qmake ../ConsolCalc.pro
 make -j$(nproc)
@@ -104,12 +104,12 @@ Ctrl+R для запуска.
 Покрывают: арифметику, деление на ноль, сброс, lcm, проверку
 излучения сигнала.
 
-bash
+
 cd build-cmake
 ctest --output-on-failure
 Ожидаемый результат:
 
-text
+
 Test project /path/to/ConsolCalc/build-cmake
     Start 1: CalculatorTests
 1/1 Test #1: CalculatorTests ..............   Passed    0.05 sec
@@ -117,23 +117,23 @@ Test project /path/to/ConsolCalc/build-cmake
 100% tests passed, 0 tests failed out of 1
 Для подробного вывода каждого теста:
 
-bash
+
 ctest -V
 или напрямую:
 
-bash
+
 ./build-cmake/tests/test_calculator
 Упаковка
 С помощью CPack создаются готовые дистрибутивы:
 
-bash
+
 cd build-cmake
 cpack -G TGZ     # архив tar.gz
 cpack -G DEB     # .deb-пакет (требуется dpkg-dev)
 На выходе получится файл вида ConsolCalc-1.0.0-Linux.tar.gz.
 
 Пример работы
-text
+
 === Консольный калькулятор на Qt ===
 Доступные команды:
   add <a> <b> - сложение
